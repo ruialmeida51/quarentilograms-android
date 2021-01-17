@@ -3,11 +3,12 @@ package com.ruialmeida.quarentilograms.features.homepage.viewmodel
 import android.util.Log
 import com.ruialmeida.lumbridgelibrary.extensions.platform.coroutines.*
 import com.ruialmeida.lumbridgelibrary.viewmodel.base.BaseStatefulViewModel
+import com.ruialmeida.quarentilograms.features.homepage.state.HomePageErrorState
 import com.ruialmeida.quarentilograms.features.homepage.state.HomePageState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 
-class HomePageViewModel : BaseStatefulViewModel<HomePageState>() {
+class HomePageViewModel : BaseStatefulViewModel<HomePageState, HomePageErrorState>() {
 
     companion object {
         private sealed class HomePageClickActions {
@@ -37,5 +38,7 @@ class HomePageViewModel : BaseStatefulViewModel<HomePageState>() {
             }
         }.flowOnMain().launchOnIO()
     }
+
+    override fun getDefaultErrorState(): HomePageErrorState = HomePageErrorState()
 
 }
