@@ -1,0 +1,3 @@
+include ':app', ':lumbridgelib'
+project(':lumbridgelib').projectDir = new File(settingsDir, 'lumbridge-android/lumbridge')
+rootProject.name = "quarentilograms"

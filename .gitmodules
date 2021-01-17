@@ -1,0 +1,3 @@
+[submodule "lumbridge-android"]
+	path = lumbridge-android
+	url = https://github.com/ruialmeida51/lumbridge-android.git

@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.ruialmeida.quarentilograms"
+        minSdkVersion 28
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def flowBindingVersion = '0.12.0'
+def kotlinCoroutinesVersion = '1.3.2'
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    api(project(path: ':lumbridgelib'))
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    //Coroutines Bindings
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesVersion"
+    //Coroutines
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-android:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-activity:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-appcompat:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-core:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-drawerlayout:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-lifecycle:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-navigation:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-preference:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:$flowBindingVersion"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-material:$flowBindingVersion"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}
