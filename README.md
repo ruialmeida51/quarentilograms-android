@@ -12,7 +12,7 @@ TODO
 
 # Credits
 
-* **João Rocha** - [Github](https://github.com/ojoaorocha) for the precious [back-end](https://github.com/ojoaorocha/quarentilograms-backend) services. Kudos! It has been a fun ride. 🙇
+* [**João Rocha**](https://github.com/ojoaorocha) - for the precious [back-end](https://github.com/ojoaorocha/quarentilograms-backend) services. Kudos! It has been a fun ride. 🙇
 
 # Buy me a coffee
 TODO
