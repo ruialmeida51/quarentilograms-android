@@ -1,0 +1,82 @@
+ext {
+    def kotlinCoroutinesVersion = '1.3.7'
+    def threeTenABPDateVersion = '1.3.0'
+    def appCompatVersion = '1.3.0-beta01'
+    def kotlinExtensionsVersion = '1.3.2'
+    def lifeCycleVersion = '2.2.0'
+    def flowBindingVersion = '0.12.0'
+    def ankoVersion = '0.10.8'
+    def navigationVersion = "2.3.4"
+    def roomVersion = '2.3.0-rc01'
+    def junitVersion = '4.+'
+    def retrofitVersion = '2.9.0'
+    def gsonVersion = '2.8.6'
+    def koinVersion = '3.0.1-beta-1'
+
+    sdkDependencies = [
+            //General
+            appCompat                                 : "androidx.appcompat:appcompat:$appCompatVersion",
+            threeTenABPDate                           : "com.jakewharton.threetenabp:threetenabp:$threeTenABPDateVersion",
+            kotlin                                    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            anko                                      : "org.jetbrains.anko:anko:$ankoVersion",
+
+            //Extensions
+            kotlinExt                                 : "androidx.core:core-ktx:$kotlinExtensionsVersion",
+            lifeCycleExt                              : "androidx.lifecycle:lifecycle-extensions:$lifeCycleVersion",
+            lifeCycleViewModelExt                     : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
+
+            //Coroutines
+            kotlinCoroutines                          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion",
+            kotlinCoroutinesAndroid                   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesVersion",
+
+            //Coroutines Bindings
+            kotlinCoroutinesBindingsPlatform          : "io.github.reactivecircus.flowbinding:flowbinding-android:$flowBindingVersion",
+            kotlinCoroutinesBindingsActivity          : "io.github.reactivecircus.flowbinding:flowbinding-activity:$flowBindingVersion",
+            kotlinCoroutinesBindingsAppcompat         : "io.github.reactivecircus.flowbinding:flowbinding-appcompat:$flowBindingVersion",
+            kotlinCoroutinesBindingsCore              : "io.github.reactivecircus.flowbinding:flowbinding-core:$flowBindingVersion",
+            kotlinCoroutinesBindingsDrawerLayout      : "io.github.reactivecircus.flowbinding:flowbinding-drawerlayout:$flowBindingVersion",
+            kotlinCoroutinesBindingsLifeCycle         : "io.github.reactivecircus.flowbinding:flowbinding-lifecycle:$flowBindingVersion",
+            kotlinCoroutinesBindingsNavigation        : "io.github.reactivecircus.flowbinding:flowbinding-navigation:$flowBindingVersion",
+            kotlinCoroutinesBindingsPreferences       : "io.github.reactivecircus.flowbinding:flowbinding-preference:$flowBindingVersion",
+            kotlinCoroutinesBindingsRecyclerView      : "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:$flowBindingVersion",
+            kotlinCoroutinesBindingsSwipeRefreshLayout: "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:$flowBindingVersion",
+            kotlinCoroutinesBindingsViewPager2        : "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:$flowBindingVersion",
+            kotlinCoroutinesBindingsMaterial          : "io.github.reactivecircus.flowbinding:flowbinding-material:$flowBindingVersion",
+
+            // Navigation Component
+            navigationFragmentKotlinExt               : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationFragmentUIKotlinExt             : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+            navigationFragmentDynamicFeatures         : "androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion",
+
+            // Room
+            room                                      : "androidx.room:room-runtime:$roomVersion",
+            roomExt                                   : "androidx.room:room-ktx:$roomVersion",
+
+            // Retrofit
+            retrofit                                  : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGson                              : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+
+
+            // Gson
+            gson                                      : "com.google.code.gson:gson:$gsonVersion",
+
+            // Koin
+            koin                                      : "io.insert-koin:koin-android:$koinVersion",
+            koinExt                                   : "io.insert-koin:koin-android-ext:$koinVersion",
+            koinAndroidX                              : "io.insert-koin:koin-androidx-workmanager:$koinVersion",
+            koinCompose                               : "io.insert-koin:koin-androidx-compose:$koinVersion",
+    ]
+
+    sdkAnnotationProcessors = [
+            // Room
+            room: "androidx.room:room-compiler:$roomVersion"
+    ]
+
+    sdkTestDependencies = [
+            // Room
+            room : "androidx.room:room-testing:$roomVersion",
+
+            // JUnit
+            junit: "junit:junit:$junitVersion",
+    ]
+}

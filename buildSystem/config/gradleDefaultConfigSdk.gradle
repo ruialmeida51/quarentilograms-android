@@ -1,0 +1,25 @@
+apply from: "../buildSystem/common/gradleCommonVariables.gradle"
+
+android {
+    compileSdkVersion currentCompileSdkVersion
+    buildToolsVersion currentBuildToolsVersion
+
+    defaultConfig {
+        targetSdkVersion currentTargetSdkVersion
+        minSdkVersion currentMinimumSdkVersion
+
+        versionCode fallBackVersionCode
+        versionName fallBackVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = jvmTargetVersion
+    }
+}

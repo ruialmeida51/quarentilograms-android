@@ -1,0 +1,36 @@
+ext {
+    def constraintLayoutVersion = '2.1.0-alpha2'
+    def recyclerViewVersion = '1.1.0'
+    def cardViewVersion = '1.0.0'
+    def overScrollVersion = '1.0.4'
+    def composeVersion = '1.0.0-alpha05'
+    def navigationVersion = "2.3.4"
+    def junitVersion = '4.+'
+    def roomVersion = "2.2.6"
+
+    appDependencies = [
+            //Views
+            constraintLayout                          : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            recyclerView                              : "androidx.recyclerview:recyclerview:$recyclerViewVersion",
+            cardView                                  : "androidx.cardview:cardview:$cardViewVersion",
+            overScroll                                : "me.everything:overscroll-decor-android:$overScrollVersion",
+
+            // Compose
+            jetpackCompose                            : "androidx.navigation:navigation-compose:$composeVersion",
+    ]
+
+    appAnnotationProcessors = [
+            // Room
+            room: "androidx.room:room-compiler:$roomVersion"
+    ]
+
+    appAndroidTestDependencies = [
+            // Navigation
+            navigationTesting: "androidx.navigation:navigation-testing:$navigationVersion",
+    ]
+
+    appTestDependencies = [
+            // JUnit
+            junit: "junit:junit:$junitVersion",
+    ]
+}

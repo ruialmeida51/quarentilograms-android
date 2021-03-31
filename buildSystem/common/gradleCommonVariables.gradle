@@ -1,0 +1,12 @@
+project.ext {
+    currentCompileSdkVersion = 30
+    currentTargetSdkVersion = 30
+    currentMinimumSdkVersion = 28
+    currentBuildToolsVersion = "30.0.3"
+    fallBackVersionCode = 1
+    fallBackVersionName = "1.0"
+
+    jvmTargetVersion = '1.8'
+
+    getMachineBuildNumber = System.getenv('BUILD_NUMBER').toString()
+}

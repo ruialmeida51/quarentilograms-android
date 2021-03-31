@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from: "../buildSystem/config/gradleDefaultConfigSdk.gradle"
+apply from: "../buildSystem/dependencies/gradleDependenciesSdk.gradle"
+apply from: "../buildSystem/common/gradleBuildTypesSdk.gradle"
+
+dependencies {
+    api sdkDependencies.values()
+    kapt sdkAnnotationProcessors.values()
+
+    testImplementation sdkTestDependencies.values()
+}

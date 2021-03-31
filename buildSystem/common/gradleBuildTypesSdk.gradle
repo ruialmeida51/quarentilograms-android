@@ -1,0 +1,18 @@
+android {
+    buildTypes {
+        release {
+            buildConfigField "String", "API_URL", "\"https://api.openweathermap.org/data/2.5/\""
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            buildConfigField "String", "API_URL", "\"https://api.openweathermap.org/data/2.5/\""
+            debuggable true
+        }
+
+        qa {
+            initWith debug
+        }
+    }
+}

@@ -1,0 +1,30 @@
+apply from: "../buildSystem/common/gradleCommonVariables.gradle"
+
+android {
+    compileSdkVersion currentCompileSdkVersion
+    buildToolsVersion currentBuildToolsVersion
+
+    defaultConfig {
+        applicationId "com.ruialmeida.quarentilograms"
+        targetSdkVersion currentTargetSdkVersion
+        minSdkVersion currentMinimumSdkVersion
+
+        versionCode fallBackVersionCode
+        versionName fallBackVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = jvmTargetVersion
+    }
+}
