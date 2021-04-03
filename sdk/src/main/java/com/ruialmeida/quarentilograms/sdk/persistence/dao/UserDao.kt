@@ -10,6 +10,12 @@ interface UserDao : BaseDao<LocalUserData> {
     /**
      * Returns all of the users present in the database.
      */
-    @Query("SELECT * FROM ${UserTable.PRIMARY_KEY_ID_COLUMN}")
-    suspend fun findAll(): List<LocalUserData>
+    @Query("SELECT * FROM ${UserTable.TABLE_NAME}")
+    suspend fun findAll(): List<LocalUserData>?
+
+    /**
+     * Returns the user with the specified if it exists.
+     */
+    @Query("SELECT * FROM ${UserTable.TABLE_NAME} WHERE ${UserTable.PRIMARY_KEY_ID_COLUMN} =:userId")
+    suspend fun findById(userId: Long): LocalUserData?
 }

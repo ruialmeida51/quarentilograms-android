@@ -1,12 +1,8 @@
 package com.ruialmeida.quarentilograms
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import com.ruialmeida.quarentilograms.features.login.fragment.LoginFragmentDirections
 
 class MainActivity : AppCompatActivity() {
 

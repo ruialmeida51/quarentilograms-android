@@ -1,26 +1,34 @@
 package com.ruialmeida.quarentilograms.features.login.viewmodel
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.ruialmeida.quarentilograms.sdk.extensions.platform.kotlin.multipleLet
 import com.ruialmeida.quarentilograms.sdk.extensions.platform.livedata.combineLatestNullable
 import com.ruialmeida.quarentilograms.sdk.extensions.platform.livedata.update
+import com.ruialmeida.quarentilograms.sdk.repository.user.IUserRepository
 import com.ruialmeida.quarentilograms.sdk.utils.platform.livedata.SingleLiveData
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator.validateEmail
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator.validatePassword
+import com.ruialmeida.quarentilograms.shared.extensions.platform.koin.inject
 import com.ruialmeida.quarentilograms.shared.viewmodel.BaseDataBindingViewModel
+import kotlinx.coroutines.launch
+import java.lang.Exception
 
 class LoginFragmentViewModel : BaseDataBindingViewModel() {
     companion object {
         private const val TAG = "LoginFragmentViewModel"
 
         sealed class LoginFragmentActions {
-            object LoginClick: LoginFragmentActions()
-            object RegisterClick: LoginFragmentActions()
+            object LoginClick : LoginFragmentActions()
+            object RegisterClick : LoginFragmentActions()
         }
     }
+
+    private val userRepository: IUserRepository by inject()
 
     /**
      * Data binding variables to be used on the XML.
@@ -45,11 +53,12 @@ class LoginFragmentViewModel : BaseDataBindingViewModel() {
     /**
      * Calculates if the login button should be enabled or not.
      */
-    private val shouldEnableLoginButton = combineLatestNullable(emailLive, passwordLive) { email, password ->
-        multipleLet(email, password) { nonNullEmail, nonNullPassword ->
-            validateCredentials(nonNullEmail, nonNullPassword)
-        } ?: false
-    }
+    private val shouldEnableLoginButton =
+        combineLatestNullable(emailLive, passwordLive) { email, password ->
+            multipleLet(email, password) { nonNullEmail, nonNullPassword ->
+                validateCredentials(nonNullEmail, nonNullPassword)
+            } ?: false
+        }
 
     /**
      * Validates our user credentials using our helper class [CredentialsValidator]
@@ -71,6 +80,13 @@ class LoginFragmentViewModel : BaseDataBindingViewModel() {
      */
     fun onLoginClick() {
         Log.d(TAG, "Clicked the login button.")
+        viewModelScope.launch {
+            try {
+                userRepository.findAll()
+            } catch (exception: Exception) {
+                Log.e(TAG, "Kaboom!", exception)
+            }
+        }
         loginFragmentActionsLive.update(LoginFragmentActions.LoginClick)
     }
 

@@ -5,8 +5,6 @@ import com.ruialmeida.quarentilograms.sdk.network.client.INetworkClient
 import com.ruialmeida.quarentilograms.sdk.network.client.NetworkClient
 import com.ruialmeida.quarentilograms.sdk.network.service.provider.IServiceProvider
 import com.ruialmeida.quarentilograms.sdk.network.service.provider.ServiceProvider
-import com.ruialmeida.quarentilograms.sdk.network.service.service.LoginService
-import org.koin.androidx.compose.get
 import org.koin.dsl.module
 
 object NetworkModule: KoinModule {

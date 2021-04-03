@@ -5,5 +5,6 @@ import com.ruialmeida.quarentilograms.sdk.persistence.dao.UserDao
 import com.ruialmeida.quarentilograms.sdk.persistence.localdatasource.base.BaseLocalDataSource
 
 class UserLocalDataSource(private val userDao: UserDao) : IUserLocalDataSource, BaseLocalDataSource<LocalUserData>(userDao) {
-    override suspend fun findAll(): List<LocalUserData> = userDao.findAll()
+    override suspend fun findAll(): List<LocalUserData>? = userDao.findAll()
+    override suspend fun findById(userId: Long): LocalUserData? = userDao.findById(userId)
 }
