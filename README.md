@@ -1,17 +1,6 @@
 # quarentilograms-android
-COVID-19 ☢️ made everyone gain a few pounds. This is a workout helper 🦐 for Android 💚
-
-# Installation
-TODO
-
-# Contributing
-TODO
-
-# Dependencies Used
-[Lumbridge Framework](https://github.com/ruialmeida51/lumbridge-android)
+COVID-19 ☢️ made everyone gain a few pounds. This is an app to post your foods during quarantine, 🦐 for Android 💚
 
 # Credits
-TODO 
 
-# Buy me a coffee
-TODO
+* [**João Rocha**](https://github.com/ojoaorocha) - for the precious [back-end](https://github.com/ojoaorocha/quarentilograms-backend) services. Kudos! It has been a fun ride. 🙇
