@@ -14,11 +14,11 @@ data class LocalUserData(
     @ColumnInfo(name = UserTable.API_ID_COLUMN)
     val uniqueUserId: Long,
 
-    @ColumnInfo(name = UserTable.FIRST_NAME_COLUMN)
-    val firstName: String,
+    @ColumnInfo(name = UserTable.NAME_COLUMN)
+    val name: String,
 
-    @ColumnInfo(name = UserTable.LAST_NAME_COLUMN)
-    val lastName: String,
+    @ColumnInfo(name = UserTable.USERNAME_COLUMN)
+    val userName: String,
 
     @ColumnInfo(name = UserTable.EMAIL_COLUMN)
     val email: String,

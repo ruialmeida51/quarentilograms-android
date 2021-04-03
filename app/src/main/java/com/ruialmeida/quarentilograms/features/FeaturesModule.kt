@@ -1,11 +1,9 @@
 package com.ruialmeida.quarentilograms.features
 
-import com.ruialmeida.quarentilograms.sdk.koin.KoinModule
-import org.koin.core.module.Module
-import org.koin.dsl.module
+import com.ruialmeida.quarentilograms.features.login.LoginModule
+import com.ruialmeida.quarentilograms.features.register.RegisterModule
+import com.ruialmeida.quarentilograms.sdk.koin.KoinModuleList
 
-object FeaturesModule : KoinModule {
-    override fun getModule() = module {
-
-    }
+object FeaturesModule : KoinModuleList {
+    override fun getModules() = LoginModule.getModule() + RegisterModule.getModule()
 }

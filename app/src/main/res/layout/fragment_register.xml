@@ -2,38 +2,32 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="registerViewModel"
+            type="com.ruialmeida.quarentilograms.features.register.viewmodel.RegisterFragmentViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/activity_header_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_margin"
-            android:fontFamily="@font/bold"
-            android:text="@string/app_name"
-            android:textColor="@color/text_primary"
-            android:textSize="@dimen/header_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/activity_login_title"
+            android:id="@+id/fragment_register_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_margin"
             android:layout_marginTop="@dimen/default_margin"
             android:fontFamily="@font/bold"
-            android:text="@string/login_title"
+            android:text="@string/register_title"
             android:textColor="@color/text_primary"
             android:textSize="@dimen/title_text_size"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activity_header_title" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/activity_login_email"
+            android:id="@+id/fragment_register_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
@@ -41,16 +35,53 @@
             android:backgroundTint="@color/text_tertiary"
             android:focusable="true"
             android:fontFamily="@font/light"
-            android:hint="@string/login_email"
+            android:hint="@string/register_name"
             android:inputType="textEmailAddress"
             android:singleLine="true"
+            android:text="@={registerViewModel.nameLive}"
             android:textSize="@dimen/regular_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activity_login_title" />
+            app:layout_constraintTop_toBottomOf="@id/fragment_register_title" />
 
         <EditText
-            android:id="@+id/activity_login_password"
+            android:id="@+id/fragment_register_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            android:autofillHints="@string/login_email"
+            android:backgroundTint="@color/text_tertiary"
+            android:focusable="true"
+            android:fontFamily="@font/light"
+            android:hint="@string/register_userName"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:text="@={registerViewModel.userNameLive}"
+            android:textSize="@dimen/regular_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_register_name" />
+
+        <EditText
+            android:id="@+id/fragment_register_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            android:autofillHints="@string/login_email"
+            android:backgroundTint="@color/text_tertiary"
+            android:focusable="true"
+            android:fontFamily="@font/light"
+            android:hint="@string/register_email"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:text="@={registerViewModel.emailLive}"
+            android:textSize="@dimen/regular_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_register_user_name" />
+
+        <EditText
+            android:id="@+id/fragment_register_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
@@ -58,58 +89,34 @@
             android:backgroundTint="@color/text_tertiary"
             android:focusable="true"
             android:fontFamily="@font/light"
-            android:hint="@string/login_password"
+            android:hint="@string/register_password"
             android:inputType="textPassword"
+            android:text="@={registerViewModel.passwordLive}"
             android:textSize="@dimen/regular_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activity_login_email" />
+            app:layout_constraintTop_toBottomOf="@id/fragment_register_email" />
 
         <TextView
-            android:id="@+id/activity_login_do_not_have_account"
+            android:id="@+id/fragment_register_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_margin"
-            android:layout_marginTop="@dimen/double_margin"
-            android:text="@string/login_do_not_have_account"
-            android:textSize="@dimen/regular_text_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activity_login_password" />
-
-        <TextView
-            android:id="@+id/activity_login_register_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/double_margin"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:paddingStart="@dimen/half_margin"
-            android:paddingEnd="@dimen/half_margin"
-            android:text="@string/login_register_now"
-            android:textColor="@color/text_primary"
-            android:textSize="@dimen/regular_text_size"
-            app:layout_constraintStart_toEndOf="@id/activity_login_do_not_have_account"
-            app:layout_constraintTop_toBottomOf="@id/activity_login_password" />
-
-        <TextView
-            android:id="@+id/activity_login_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin"
-            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginTop="@dimen/default_margin"
             android:layout_marginEnd="@dimen/default_margin"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
             android:foreground="@color/colorAccent"
             android:padding="@dimen/half_margin"
-            android:text="@string/login_button"
+            android:text="@string/register_button"
+            android:onClick="@{() -> registerViewModel.onRegisterButtonClick()}"
             android:textAlignment="center"
             android:textColor="@color/text_primary"
             android:textSize="@dimen/title_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activity_login_do_not_have_account" />
+            app:layout_constraintTop_toBottomOf="@id/fragment_register_password" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

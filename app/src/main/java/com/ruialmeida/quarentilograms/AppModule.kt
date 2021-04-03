@@ -6,5 +6,5 @@ import com.ruialmeida.quarentilograms.sdk.koin.KoinModuleList
 import com.ruialmeida.quarentilograms.shared.SharedModule
 
 object AppModule : KoinModuleList {
-    override fun getModules() = FeaturesModule.getModule() + SharedModule.getModule()
+    override fun getModules() = FeaturesModule.getModules() + SharedModule.getModule()
 }

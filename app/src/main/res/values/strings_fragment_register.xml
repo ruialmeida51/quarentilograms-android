@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register_title">Register a new Account</string>
+    <string name="register_userName">@string/userName</string>
+    <string name="register_name">@string/name</string>
+    <string name="register_email">@string/email</string>
+    <string name="register_password">@string/password</string>
+    <string name="register_button">@string/register</string>
+</resources>

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="login_title">@string/login</string>
+    <string name="login_email">@string/email</string>
+    <string name="login_password">@string/password</string>
+    <string name="login_button">@string/login</string>
 
-    <string name="login_title">Login</string>
-
-    <string name="login_email">Email</string>
-    <string name="login_password">Password</string>
-
-    <string name="login_button">Login</string>
     <string name="login_do_not_have_account">Don\'t have an account?</string>
     <string name="login_register_now">Register now</string>
-
     <string name="login_with_google">Login with Google</string>
-
 </resources>

@@ -8,6 +8,7 @@ apply from: "../buildSystem/common/gradleBuildTypesSdk.gradle"
 
 dependencies {
     api sdkDependencies.values()
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     kapt sdkAnnotationProcessors.values()
 
     testImplementation sdkTestDependencies.values()

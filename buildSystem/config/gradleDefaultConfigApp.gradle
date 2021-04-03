@@ -17,6 +17,9 @@ android {
 
     buildFeatures {
         dataBinding = true
+
+        //Currently, compose is not supported with kapt. Awaiting a fix for this before enabling it again.
+        //compose = true
     }
 
     compileOptions {
