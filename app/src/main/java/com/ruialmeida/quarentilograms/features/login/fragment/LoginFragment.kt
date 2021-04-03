@@ -1,6 +1,7 @@
 package com.ruialmeida.quarentilograms.features.login.fragment
 
 import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.ruialmeida.quarentilograms.R
 import com.ruialmeida.quarentilograms.databinding.FragmentLoginBinding
@@ -16,11 +17,11 @@ class LoginFragment : BaseDataBindingFragment<FragmentLoginBinding, LoginFragmen
     override fun handleInteractions(binding: FragmentLoginBinding, viewModel: LoginFragmentViewModel) {
         binding.loginViewModel = viewModel
 
-        viewModel.getShouldEnableLoginButtonLive().observe(this, { shouldEnableLoginButton ->
+        viewModel.getShouldEnableLoginButtonLive().observe(this, Observer { shouldEnableLoginButton ->
             handleShouldLoginButtonEnabled(binding, shouldEnableLoginButton)
         })
 
-        viewModel.getLoginActionsLive().observe(this, { action ->
+        viewModel.getLoginActionsLive().observe(this, Observer { action ->
             handleLoginActions(action)
         })
     }
@@ -36,7 +37,8 @@ class LoginFragment : BaseDataBindingFragment<FragmentLoginBinding, LoginFragmen
     private fun handleLoginActions(loginAction: LoginFragmentActions) {
         when(loginAction) {
             LoginFragmentActions.LoginClick -> {
-                findNavController().navigate(LoginFragmentDirections.actionFragmentLoginToFragmentFeed())
+                findNavController().navigate(LoginFragmentDirections.actionFragmentLoginToActivityAuthenticated())
+                requireActivity().finish()
             }
             LoginFragmentActions.RegisterClick -> {
                 findNavController().navigate(LoginFragmentDirections.actionFragmentLoginToFragmentRegister())

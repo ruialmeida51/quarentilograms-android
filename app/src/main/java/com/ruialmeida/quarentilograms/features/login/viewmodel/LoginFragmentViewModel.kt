@@ -1,6 +1,5 @@
 package com.ruialmeida.quarentilograms.features.login.viewmodel
 
-import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,7 +12,7 @@ import com.ruialmeida.quarentilograms.sdk.utils.platform.livedata.SingleLiveData
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator.validateEmail
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator.validatePassword
-import com.ruialmeida.quarentilograms.shared.extensions.platform.koin.inject
+import com.ruialmeida.quarentilograms.shared.extensions.koin.inject
 import com.ruialmeida.quarentilograms.shared.viewmodel.BaseDataBindingViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
@@ -53,12 +52,11 @@ class LoginFragmentViewModel : BaseDataBindingViewModel() {
     /**
      * Calculates if the login button should be enabled or not.
      */
-    private val shouldEnableLoginButton =
-        combineLatestNullable(emailLive, passwordLive) { email, password ->
-            multipleLet(email, password) { nonNullEmail, nonNullPassword ->
-                validateCredentials(nonNullEmail, nonNullPassword)
-            } ?: false
-        }
+    private val shouldEnableLoginButton = combineLatestNullable(emailLive, passwordLive) { email, password ->
+        multipleLet(email, password) { nonNullEmail, nonNullPassword ->
+            validateCredentials(nonNullEmail, nonNullPassword)
+        } ?: false
+    }
 
     /**
      * Validates our user credentials using our helper class [CredentialsValidator]

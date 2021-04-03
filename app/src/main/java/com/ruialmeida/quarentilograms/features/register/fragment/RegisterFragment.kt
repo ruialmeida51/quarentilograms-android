@@ -1,6 +1,7 @@
 package com.ruialmeida.quarentilograms.features.register.fragment
 
 import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.ruialmeida.quarentilograms.R
 import com.ruialmeida.quarentilograms.databinding.FragmentRegisterBinding
@@ -16,11 +17,11 @@ class RegisterFragment : BaseDataBindingFragment<FragmentRegisterBinding, Regist
     override fun handleInteractions(binding: FragmentRegisterBinding, viewModel: RegisterFragmentViewModel) {
         binding.registerViewModel = viewModel
 
-        viewModel.getShouldEnableRegisterButtonLive().observe(this, { shouldRegisterButtonBeEnabled ->
+        viewModel.getShouldEnableRegisterButtonLive().observe(this, Observer { shouldRegisterButtonBeEnabled ->
             handleShouldRegisterButtonBeEnabled(binding, shouldRegisterButtonBeEnabled)
         })
 
-        viewModel.getRegisterActionsLive().observe(this, { action ->
+        viewModel.getRegisterActionsLive().observe(this, Observer { action ->
             handleRegisterActions(action)
         })
     }
@@ -36,7 +37,8 @@ class RegisterFragment : BaseDataBindingFragment<FragmentRegisterBinding, Regist
     private fun handleRegisterActions(registerActions: RegisterFragmentActions) {
         when(registerActions) {
             RegisterFragmentActions.RegisterClick -> {
-                findNavController().navigate(RegisterFragmentDirections.actionFragmentLoginToFragmentFeed())
+                findNavController().navigate(RegisterFragmentDirections.actionFragmentRegisterToActivityAuthenticated())
+                requireActivity().finish()
             }
         }
     }

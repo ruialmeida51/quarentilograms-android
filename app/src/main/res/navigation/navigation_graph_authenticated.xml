@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_authenticated"
+    app:startDestination="@id/fragment_feed">
+
+    <fragment
+        android:id="@+id/fragment_feed"
+        android:name="com.ruialmeida.quarentilograms.features.feed.fragment.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed">
+
+        <action
+            android:id="@+id/action_fragment_feed_to_fragment_profile"
+            app:destination="@id/fragment_profile"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="com.ruialmeida.quarentilograms.features.settings.fragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_fragment_settings_to_fragment_feed"
+            app:destination="@id/fragment_feed"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.ruialmeida.quarentilograms.features.profile.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_fragment_profile_to_searchFragment"
+            app:destination="@id/fragment_search" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_newpost"
+        android:name="com.ruialmeida.quarentilograms.features.newpost.fragment.NewPostFragment"
+        android:label="NewPostFragment"
+        tools:layout="@layout/fragment_newpost" />
+
+    <fragment
+        android:id="@+id/fragment_search"
+        android:name="com.ruialmeida.quarentilograms.features.search.fragment.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_newPostFragment"
+            app:destination="@id/fragment_newpost" />
+    </fragment>
+</navigation>

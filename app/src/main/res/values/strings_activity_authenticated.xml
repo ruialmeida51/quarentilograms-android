@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="back_button_pressed_message">Please, press back again to exit the application.</string>
+</resources>

@@ -3,15 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/drawable/ic_home.xml" value="0.1" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/activity_authenticated.xml" value="0.2" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/activity_authentication.xml" value="0.176" />
         <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/activity_homepage.xml" value="0.1" />
-        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/activity_pre_authentication.xml" value="0.315625" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/fragment_dms.xml" value="0.4057971014492754" />
         <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/fragment_feed.xml" value="0.3625" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/fragment_friends.xml" value="0.4057971014492754" />
         <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/fragment_login.xml" value="0.176" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/fragment_newpost.xml" value="0.4057971014492754" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/fragment_profile.xml" value="0.4057971014492754" />
         <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/fragment_register.xml" value="0.2914572864321608" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/layout/fragment_settings.xml" value="0.4057971014492754" />
+        <entry key="..\:/Users/Rui Almeida/Documents/Work/quarentilograms-android/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.264" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

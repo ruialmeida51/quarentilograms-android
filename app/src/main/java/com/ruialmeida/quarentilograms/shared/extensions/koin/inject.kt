@@ -1,4 +1,4 @@
-package com.ruialmeida.quarentilograms.shared.extensions.platform.koin
+package com.ruialmeida.quarentilograms.shared.extensions.koin
 
 import org.koin.core.context.GlobalContext
 import org.koin.core.parameter.ParametersDefinition

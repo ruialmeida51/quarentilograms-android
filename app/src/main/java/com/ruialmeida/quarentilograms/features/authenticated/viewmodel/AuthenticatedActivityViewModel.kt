@@ -1,0 +1,5 @@
+package com.ruialmeida.quarentilograms.features.authenticated.viewmodel
+
+import com.ruialmeida.quarentilograms.shared.viewmodel.BaseDataBindingViewModel
+
+class AuthenticatedActivityViewModel : BaseDataBindingViewModel()
