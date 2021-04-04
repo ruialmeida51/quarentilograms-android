@@ -6,7 +6,6 @@ import android.util.Patterns.EMAIL_ADDRESS
  * An helper class that contains functions to validate the user credentials.
  */
 object CredentialsValidator {
-
     /**
      * Defines the minimum amount of characters for the password.
      */

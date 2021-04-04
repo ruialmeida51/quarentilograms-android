@@ -12,6 +12,10 @@ ext {
     def retrofitVersion = '2.9.0'
     def gsonVersion = '2.8.6'
     def koinVersion = '3.0.1-beta-1'
+    def sqlCipherVersion = '4.4.3'
+    def sqLiteVersion = '2.0.1'
+    def securityCryptoVersion = '1.0.0-rc04'
+    def securityIdentityCredentialVersion = '1.0.0-alpha02'
 
     sdkDependencies = [
             //General
@@ -65,6 +69,14 @@ ext {
             koinExt                                   : "io.insert-koin:koin-android-ext:$koinVersion",
             koinAndroidX                              : "io.insert-koin:koin-androidx-workmanager:$koinVersion",
             koinCompose                               : "io.insert-koin:koin-androidx-compose:$koinVersion",
+
+            // SQL Cipher
+            sqlCipher                                 : "net.zetetic:android-database-sqlcipher:$sqlCipherVersion",
+            sqlite                                    : "androidx.sqlite:sqlite:$sqLiteVersion",
+
+            // Security
+            securityCrypto                            : "androidx.security:security-crypto:$securityCryptoVersion",
+            securityIdentity                          : "androidx.security:security-identity-credential:$securityIdentityCredentialVersion",
     ]
 
     sdkAnnotationProcessors = [

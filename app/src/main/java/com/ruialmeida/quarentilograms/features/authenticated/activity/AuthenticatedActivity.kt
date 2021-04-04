@@ -10,6 +10,7 @@ import com.ruialmeida.quarentilograms.features.feed.fragment.FeedFragment
 import com.ruialmeida.quarentilograms.shared.activity.BaseNavigationDataBindingActivity
 import com.ruialmeida.quarentilograms.shared.extensions.platform.showToast
 
+
 class AuthenticatedActivity :
     BaseNavigationDataBindingActivity<ActivityAuthenticatedBinding, AuthenticatedActivityViewModel>(
         R.layout.activity_authenticated,
@@ -29,7 +30,7 @@ class AuthenticatedActivity :
 
     override fun handleInteractions(
         binding: ActivityAuthenticatedBinding,
-        viewModel: AuthenticatedActivityViewModel,
+        viewModel: AuthenticatedActivityViewModel
     ) {
         binding.activityAuthenticatedBottomNavigation.setupWithNavController(getNavHostFragment().navController)
     }
@@ -38,7 +39,9 @@ class AuthenticatedActivity :
         if (getNavHostFragment().childFragmentManager.fragments.first() !is FeedFragment) {
             super.onBackPressed()
         } else {
-            if (doubleBackToExitPressedOnce) { super.onBackPressed(); return }
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed(); return
+            }
             doubleBackToExitPressedOnce = true
             showToast(this, R.string.back_button_pressed_message)
             handler.postDelayed({ doubleBackToExitPressedOnce = false }, BACK_PRESSED_DELAY)

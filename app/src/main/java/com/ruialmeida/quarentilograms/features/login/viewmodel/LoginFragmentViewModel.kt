@@ -12,7 +12,7 @@ import com.ruialmeida.quarentilograms.sdk.utils.platform.livedata.SingleLiveData
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator.validateEmail
 import com.ruialmeida.quarentilograms.sdk.utils.validator.CredentialsValidator.validatePassword
-import com.ruialmeida.quarentilograms.shared.extensions.koin.inject
+import com.ruialmeida.quarentilograms.sdk.extensions.koin.inject
 import com.ruialmeida.quarentilograms.shared.viewmodel.BaseDataBindingViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
