@@ -20,6 +20,7 @@ class DatabaseProvider(private val androidApplication: Application) : IDatabaseP
 
         return Room.databaseBuilder(androidApplication, QuarentilogramsDatabase::class.java, Database.DB_NAME)
             .openHelperFactory(sqLiteFactory)
+            .fallbackToDestructiveMigration()
             .build()
     }
 }

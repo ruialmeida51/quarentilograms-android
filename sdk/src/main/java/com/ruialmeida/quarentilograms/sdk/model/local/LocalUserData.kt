@@ -7,9 +7,9 @@ import com.ruialmeida.quarentilograms.sdk.persistence.database.DatabaseConstants
 
 @Entity(tableName = UserTable.TABLE_NAME)
 data class LocalUserData(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = UserTable.PRIMARY_KEY_ID_COLUMN)
-    val id: Long = -1,
+    val id: Long = 0L,
 
     @ColumnInfo(name = UserTable.API_ID_COLUMN)
     val uniqueUserId: Long,

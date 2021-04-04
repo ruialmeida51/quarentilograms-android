@@ -12,6 +12,5 @@ import com.ruialmeida.quarentilograms.sdk.persistence.database.DatabaseConstants
     exportSchema = false
 )
 abstract class QuarentilogramsDatabase : RoomDatabase() {
-
     abstract fun userDAO(): UserDao
 }

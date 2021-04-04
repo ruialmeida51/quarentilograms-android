@@ -14,6 +14,6 @@ class UserRepository(
     }
 
     override suspend fun findAll(): List<LocalUserData> {
-        return listOf()
+        return localDataSource.findAll()
     }
 }
