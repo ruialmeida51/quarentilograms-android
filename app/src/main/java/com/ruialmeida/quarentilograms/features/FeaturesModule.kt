@@ -2,7 +2,9 @@ package com.ruialmeida.quarentilograms.features
 
 import com.ruialmeida.quarentilograms.features.authenticated.AuthenticatedModule
 import com.ruialmeida.quarentilograms.features.authentication.AuthenticationModule
+import com.ruialmeida.quarentilograms.features.dms.DmsModule
 import com.ruialmeida.quarentilograms.features.feed.FeedModule
+import com.ruialmeida.quarentilograms.features.friends.FriendsModule
 import com.ruialmeida.quarentilograms.features.login.LoginModule
 import com.ruialmeida.quarentilograms.features.newpost.NewPostModule
 import com.ruialmeida.quarentilograms.features.profile.ProfileModule
@@ -19,6 +21,8 @@ object FeaturesModule : KoinModuleList {
             SettingsModule.getModule() +
             SearchModule.getModule() +
             NewPostModule.getModule() +
+            FriendsModule.getModule() +
+            DmsModule.getModule() +
             AuthenticationModule.getModule() +
             AuthenticatedModule.getModule()
 }
